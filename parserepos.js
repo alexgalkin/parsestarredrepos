@@ -39,7 +39,8 @@ var getDataForPage = function (pageNumber, result) {
     });
 
     if (github.hasNextPage(res)) {
-    	getDataForPage(pageNumber++);
+	console.log("Current pageNumber === " + pageNumber);
+    	getDataForPage(pageNumber+1);
     }
 
 
