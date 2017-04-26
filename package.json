@@ -1,0 +1,22 @@
+{
+  "name": "githubparser",
+  "version": "1.0.0",
+  "description": "Github parsers for analytics app",
+  "main": "parserepos.js",
+  "dependencies": {
+    "github": "^9.2.0",
+    "http": "^0.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "parser",
+    "popular",
+    "frameworks"
+  ],
+  "author": "Alex Galkin",
+  "license": "BSD-2-Clause"
+}
