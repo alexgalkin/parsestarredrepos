@@ -30,7 +30,7 @@ var getDataForPage = function (pageNumber, result) {
   }, function(err, res) {
     console.log(JSON.stringify(res));
 
-    fs.writeFile("/Users/alexg/projects/nikmobile/githubparser/" + date + "-" + time + pageNumber, JSON.stringify(res), function(err) {
+    fs.writeFile("/Users/alexg/projects/nikmobile/githubparser/" + date + "-" + time + pageNumber + ".json", JSON.stringify(res), function(err) {
     if(err) {
         return console.log(err);
     }
