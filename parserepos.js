@@ -14,6 +14,12 @@ var github = new GitHubApi({
     timeout: 5000
 });
 
+github.authenticate({
+    type: "oauth",
+    key: CLIENT_ID,
+    secret: CLIENT_SECRET
+});
+
 // TODO: optional authentication here depending on desired endpoints. See below in README.
 
 var today = new Date();
@@ -21,7 +27,7 @@ var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
 var getDataForPage = function (pageNumber, result) {
-  
+
   github.activity.getStarredReposForUser({
   username: "alexgalkin",
   page: pageNumber,
@@ -29,7 +35,7 @@ var getDataForPage = function (pageNumber, result) {
   }, function(err, res) {
     console.log(JSON.stringify(res));
 
-    fs.writeFile("/Users/alexg/projects/nikmobile/githubparser/" + date + "-" + time + pageNumber + ".json", JSON.stringify(res), "utf8", function(err) {
+    fs.writeFile("/Users/alexg/projects/nikmobile/parsestarredrepos/" + date + "-" + time + pageNumber + ".json", JSON.stringify(res), function(err) {
     if(err) {
         return console.log(err);
     }

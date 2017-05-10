@@ -5,7 +5,8 @@
   "main": "parserepos.js",
   "dependencies": {
     "github": "^9.2.0",
-    "http": "^0.0.0"
+    "http": "^0.0.0",
+    "mongodb": "^2.2.26"
   },
   "devDependencies": {},
   "scripts": {
