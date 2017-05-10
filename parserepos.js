@@ -6,12 +6,11 @@ var github = new GitHubApi({
     debug: true,
     protocol: "https",
     host: "api.github.com", // should be api.github.com for GitHub
-    //pathPrefix: "/api/v3", // for some GHEs; none for GitHub
     headers: {
         "user-agent": "GitHub-Repo-Analytics" // GitHub is happy with a unique user agent
     },
     Promise: require('bluebird'),
-    followRedirects: false, // default: true; there's currently an issue with non-get redirects, so allow ability to disable follow-redirects
+    followRedirects: false,
     timeout: 5000
 });
 
@@ -30,7 +29,7 @@ var getDataForPage = function (pageNumber, result) {
   }, function(err, res) {
     console.log(JSON.stringify(res));
 
-    fs.writeFile("/Users/alexg/projects/nikmobile/githubparser/" + date + "-" + time + pageNumber + ".json", JSON.stringify(res), function(err) {
+    fs.writeFile("/Users/alexg/projects/nikmobile/githubparser/" + date + "-" + time + pageNumber + ".json", JSON.stringify(res), "utf8", function(err) {
     if(err) {
         return console.log(err);
     }
