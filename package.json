@@ -4,6 +4,7 @@
   "description": "Github parsers for analytics app",
   "main": "parserepos.js",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "github": "^9.2.0",
     "http": "^0.0.0",
     "mongodb": "^2.2.26"
