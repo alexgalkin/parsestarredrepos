@@ -4,6 +4,7 @@ logs
 npm-debug.log*
 prod-settings.conf
 .idea
+2017*.json
 
 # params file
 github_parser_params
