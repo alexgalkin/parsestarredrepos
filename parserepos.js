@@ -21,7 +21,7 @@ github.authenticate({
 });
 
 var today = new Date();
-var date = today.getFullYear() + '-' + ((today.getMonth()+1) < 10)?'0':'' + (today.getMonth()+1) + '-'+today.getDate();
+var date = today.getFullYear() + '-' + (((today.getMonth()+1) < 10)?'0':'') + (today.getMonth()+1) + '-'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
 
@@ -44,7 +44,7 @@ var getDataForPage = function (pageNumber, result) {
   }, function(err, res) {
     console.log(JSON.stringify(res));
 
-    fs.writeFile("/Users/alexg/projects/nikmobile/parsestarredrepos/" + date + "-" + time + pageNumber + ".json", JSON.stringify(res), function(err) {
+    fs.writeFile("/Users/alexg/projects/nikmobile/parsestarredrepos/" + date + "-" + time + '-' + pageNumber + ".json", JSON.stringify(res), function(err) {
     if(err) {
         return console.log(err);
     } else {
